@@ -1,14 +1,11 @@
-import pytest
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import requests
 
 import pytest
 
 
 def pytest_addoption(parser):
     parser.addoption(
-        "--browser", action="store", default="chrome", help="Choose browsser"
+        "--browser", action="store", default="chrome", help="Choose browser"
     )
     parser.addoption(
         "--url",
