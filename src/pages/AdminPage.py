@@ -21,6 +21,9 @@ class AdminPage(BasePage):
     FEATURE_MODEL = By.CSS_SELECTOR, "#input-model"
     FEATURE_SAVE = By.CSS_SELECTOR, "#content > div.page-header > div > div > button"
     FEATURE_WARNING = By.CSS_SELECTOR, "#content > div.container-fluid > div.alert.alert-danger.alert-dismissible"
+    FEATURE_CHECKPOINT = By.CSS_SELECTOR, "input[type=checkbox]"
+    FEATURE_DELETE = By.CSS_SELECTOR, "#content > div.page-header > div > div > button.btn.btn-danger"
+
 
     def login(self):
         self.browser.find_element(*self.FEATURE_LOGIN).click()
@@ -58,3 +61,12 @@ class AdminPage(BasePage):
         except NoSuchElementException as e:
             return False
         return True
+
+    def select_one_element(self):
+        self.browser.find_element(*self.FEATURE_CHECKPOINT).click()
+        sleep(3)
+
+    def click_on_delete_button(self):
+        self.browser.find_element(*self.FEATURE_DELETE).click()
+        sleep(2)
+
