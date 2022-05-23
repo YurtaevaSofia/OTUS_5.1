@@ -2,6 +2,10 @@ from time import sleep
 
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+import selenium.webdriver.support.expected_conditions as EC
+
+
 from .BasePage import BasePage
 
 
@@ -70,3 +74,6 @@ class AdminPage(BasePage):
         self.browser.find_element(*self.FEATURE_DELETE).click()
         sleep(2)
 
+    def accept_alert(self):
+        alert = WebDriverWait(self.browser, 2).until(EC.alert_is_present())
+        alert.accept()
