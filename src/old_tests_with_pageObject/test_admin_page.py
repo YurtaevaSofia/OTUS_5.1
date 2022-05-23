@@ -1,3 +1,7 @@
+from time import sleep
+
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from src.pages.AdminPage import AdminPage
 
 
@@ -10,4 +14,25 @@ def test_admin_page(browser, url):
     AdminPage(browser).check_element_presence(AdminPage.FEATURE_FAFA_USER)
     AdminPage(browser).check_element_presence(AdminPage.FEATURE_CONTAINER_FLUID)
     AdminPage(browser).check_element_presence(AdminPage.FEATURE_FORGOTTEN_PASSWORD)
+
+
+def test_add_new_product(browser, url):
+    link = url + "admin/"
+    browser.get(link)
+    AdminPage(browser).login()
+    AdminPage(browser).go_to_products_catalog()
+    AdminPage(browser).click_on_plus_button()
+    AdminPage(browser).fill_in_new_product_name()
+    AdminPage(browser).fill_in_meta_tag_title()
+    AdminPage(browser).fill_in_model()
+    AdminPage(browser).click_on_save_button()
+    AdminPage(browser).assert_warning_is_displayed()
+
+
+
+
+
+
+
+
 

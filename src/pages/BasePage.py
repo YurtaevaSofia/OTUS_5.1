@@ -12,3 +12,4 @@ class BasePage:
         WebDriverWait(self.browser, 10).until(
             EC.presence_of_element_located(element)
         )
+
