@@ -1,11 +1,8 @@
 from time import sleep
 
-from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 import selenium.webdriver.support.expected_conditions as EC
-
-
 from .BasePage import BasePage
 
 
@@ -58,13 +55,6 @@ class AdminPage(BasePage):
     def assert_warning_is_displayed(self):
         assert(self.is_element_present(*self.FEATURE_WARNING))
         sleep(2)
-
-    def is_element_present(self, how, what):
-        try:
-            self.browser.find_element(by=how, value=what)
-        except NoSuchElementException as e:
-            return False
-        return True
 
     def select_one_element(self):
         self.browser.find_element(*self.FEATURE_CHECKPOINT).click()
