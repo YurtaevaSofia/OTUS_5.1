@@ -21,7 +21,6 @@ class NewUserPage(BasePage):
     FEATURE_CONTINUE = By.CSS_SELECTOR, "#content > form > div > div > input.btn.btn-primary"
     FEATURE_USER_IS_REGISTERED = By.CSS_SELECTOR, "#content > h1"
 
-
     def fill_in_name(self, first_name, last_name):
         self.browser.find_element(*self.FEATURE_FIRST_NAME).send_keys(first_name)
         self.browser.find_element(*self.FEATURE_LAST_NAME).send_keys(last_name)
@@ -44,4 +43,5 @@ class NewUserPage(BasePage):
 
     def assert_user_is_registered(self):
         assert(self.is_element_present(*self.FEATURE_USER_IS_REGISTERED))
+
 
