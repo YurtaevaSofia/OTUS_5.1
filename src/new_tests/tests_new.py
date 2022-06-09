@@ -10,6 +10,7 @@ def test_add_new_product(browser, url):
     link = url + "admin/"
     browser.get(link)
     AdminPage(browser).login()
+    AdminPage(browser).enter_email_and_password()
     AdminPage(browser).go_to_products_catalog()
     AdminPage(browser).click_on_plus_button()
     AdminPage(browser).fill_in_new_product_name()
@@ -50,8 +51,8 @@ def test_assert_price(browser, url):
     link = url
     browser.get(link)
     MainPage(browser).choose_currency("EURO")
-    MainPage(browser).assert_price("518")
+    MainPage(browser).assert_price("561")
     MainPage(browser).choose_currency("POUND")
-    MainPage(browser).assert_price("454")
+    MainPage(browser).assert_price("479")
     MainPage(browser).choose_currency("DOLLAR")
     MainPage(browser).assert_price("602")

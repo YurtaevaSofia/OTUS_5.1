@@ -9,4 +9,4 @@ def test_main_page(browser, url):
     MainPage(browser).check_element_presence(MainPage.FEATURE_CART_TOTAL)
     MainPage(browser).check_element_presence(MainPage.FEATURE_IMG)
     MainPage(browser).check_element_presence(MainPage.FEATURE_CONTAINER)
-    MainPage(browser).check_element_presence(MainPage.FEATURE_YOUR_STORE)
+    MainPage(browser).check_element_presence(MainPage.FEATURE_CHECKOUT)
