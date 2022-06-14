@@ -1,4 +1,4 @@
-from src.pages.AdminPage import AdminPage
+from pages.AdminPage import AdminPage
 
 
 def test_admin_page(browser, url):
