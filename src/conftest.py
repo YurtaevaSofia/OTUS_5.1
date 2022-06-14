@@ -69,5 +69,5 @@ def url(request):
 
 
 def exception_case(self, exception, driver):
-        logging.error(f'Exception accused: {exception}')
-        driver.save_screenshot(f'{exception}.png')
+    logging.error(f'Exception accused: {exception}')
+    driver.save_screenshot(f'{exception}.png')
