@@ -14,4 +14,3 @@ class CatalogPage(BasePage):
 
 
 
-

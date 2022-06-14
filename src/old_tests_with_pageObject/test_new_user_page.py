@@ -10,9 +10,3 @@ def test_new_user_page(browser, url):
     NewUserPage(browser).check_element_presence(NewUserPage.FEATURE_RETURNS)
     NewUserPage(browser).check_element_presence(NewUserPage.FEATURE_PRIVATE_POLICY)
     NewUserPage(browser).check_element_presence(NewUserPage.FEATURE_WISH_LIST)
-
-
-
-
-
-

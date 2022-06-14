@@ -9,16 +9,3 @@ def test_admin_page(browser, url):
     AdminPage(browser).check_element_presence(AdminPage.FEATURE_FAFA_USER)
     AdminPage(browser).check_element_presence(AdminPage.FEATURE_CONTAINER_FLUID)
     AdminPage(browser).check_element_presence(AdminPage.FEATURE_FORGOTTEN_PASSWORD)
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -10,5 +10,3 @@ def test_catalog_page(browser, url):
     CatalogPage(browser).check_element_presence(CatalogPage.FEATURE_CAMERAS)
     CatalogPage(browser).check_element_presence(CatalogPage.FEATURE_TABLETS)
     CatalogPage(browser).check_element_presence(CatalogPage.FEATURE_DESKTOPS)
-
-

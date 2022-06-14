@@ -10,7 +10,3 @@ def test_product_page(browser, url):
     ProductPage(browser).check_element_presence(ProductPage.FEATURE_CANON)
     ProductPage(browser).check_element_presence(ProductPage.FEATURE_DESCRIPTION)
     ProductPage(browser).check_element_presence(ProductPage.FEATURE_WRITE_A_REVIEW)
-
-
-
-

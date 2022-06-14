@@ -49,5 +49,3 @@ class NewUserPage(BasePage):
     def assert_user_is_registered(self):
         self.logger.info("Assert user is registered")
         assert(self.is_element_present(*self.FEATURE_USER_IS_REGISTERED))
-
-

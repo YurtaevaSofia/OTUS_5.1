@@ -42,5 +42,3 @@ class MainPage(BasePage):
         self.logger.info("Assert price")
         print(self.browser.find_element(*self.FEATURE_PRODUCT_PRICE).text)
         assert(price in self.browser.find_element(*self.FEATURE_PRODUCT_PRICE).text)
-
-
