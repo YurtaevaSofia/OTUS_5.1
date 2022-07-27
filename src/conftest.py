@@ -23,17 +23,17 @@ def browser(request):
     browser_name = request.config.getoption("--browser")
     executor = request.config.getoption("--executor")
     url = request.config.getoption("--url")
-    if browser_name == "chrome":
-        print("Using Chrome browser")
-        browser = webdriver.Chrome()
-    elif browser_name == "firefox":
-        print("Using Firefox browser")
-        browser = webdriver.Firefox()
-    elif browser_name == "Opera":
-        print("Using Opera browser")
-        browser = webdriver.Opera()
-    else:
-        raise pytest.UsageError("--browser should be chrome or firefox or Opera")
+    # if browser_name == "chrome":
+    #     print("Using Chrome browser")
+    #     browser = webdriver.Chrome()
+    # elif browser_name == "firefox":
+    #     print("Using Firefox browser")
+    #     browser = webdriver.Firefox()
+    # elif browser_name == "Opera":
+    #     print("Using Opera browser")
+    #     browser = webdriver.Opera()
+    # else:
+    #     raise pytest.UsageError("--browser should be chrome or firefox or Opera")
 
     if executor == "local":
         caps = {'goog:chromeOptions': {}}
@@ -43,11 +43,11 @@ def browser(request):
         executor_url = f"http://{executor}:4444/wd/hub"
 
         caps = {
-            "browserName": browser
+            "browserName": browser_name
         }
 
         options = Options()
-        if browser == "opera":
+        if browser_name == "opera":
             options.add_experimental_option('w3c', True)
 
         driver = webdriver.Remote(
@@ -58,7 +58,7 @@ def browser(request):
 
         driver.maximize_window()
 
-    yield browser
+    yield driver
     print("Quiting browser..")
     browser.quit()
 
