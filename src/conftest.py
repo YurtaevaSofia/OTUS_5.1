@@ -60,7 +60,7 @@ def browser(request):
 
     yield driver
     print("Quiting browser..")
-    browser.quit()
+    driver.quit()
 
 
 @pytest.fixture
