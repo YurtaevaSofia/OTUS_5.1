@@ -35,6 +35,9 @@ def browser(request):
     # else:
     #     raise pytest.UsageError("--browser should be chrome or firefox or Opera")
 
+    options = webdriver.ChromeOptions()
+    options.set_capability("loggingPrefs", {'performance': 'ALL'})
+    
     if executor == "local":
         caps = {'goog:chromeOptions': {}}
         driver = webdriver.Chrome(desired_capabilities=caps)
