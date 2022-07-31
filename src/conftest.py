@@ -9,7 +9,7 @@ import pytest
 def pytest_addoption(parser):
     parser.addoption(
         "--browser", action="store", default="chrome", help="Choose browser")
-    parser.addoption("--executor", action="store", default="127.0.0.1")
+    parser.addoption("--executor", action="store", default="local")
 
     parser.addoption(
         "--url",
