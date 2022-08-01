@@ -41,9 +41,9 @@ class AdminPage(BasePage):
 
     def enter_email_and_password(self):
         self.logger.info("Enter email for registration")
-        self.browser.find_element(*self.FEATURE_EMAIL).send_keys("test2@mail.ru")
+        self.browser.find_element(*self.FEATURE_EMAIL).send_keys("user")
         self.logger.info("Enter password")
-        self.browser.find_element(*self.FEATURE_PASSWORD).send_keys("test")
+        self.browser.find_element(*self.FEATURE_PASSWORD).send_keys("bitnami")
         sleep(5)
 
     def click_on_plus_button(self):
