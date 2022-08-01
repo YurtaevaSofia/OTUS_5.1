@@ -51,9 +51,9 @@ def test_assert_price(browser, url):
     link = url
     browser.get(link)
     MainPage(browser).choose_currency("EURO")
-    MainPage(browser).assert_price("561")
+    MainPage(browser).assert_price("592")
     MainPage(browser).choose_currency("POUND")
-    MainPage(browser).assert_price("479")
+    MainPage(browser).assert_price("501")
     MainPage(browser).choose_currency("DOLLAR")
     MainPage(browser).assert_price("602")
 
