@@ -1,5 +1,6 @@
 from time import sleep
 import logging
+import allure
 
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -53,7 +54,8 @@ class AdminPage(BasePage):
     def fill_in_new_product_name(self):
         self.logger.info("Enter new product name")
         self.browser.find_element(*self.FEATURE_PRODUCT_NAME).send_keys("New product")
-
+    
+    @allure.step("Выполняю клик по элементу {selector}")
     def fill_in_meta_tag_title(self):
         self.logger.info("Enter new product tag")
         self.browser.find_element(*self.FEATURE_META_TAG_TITLE).send_keys("New tag")
