@@ -1,6 +1,8 @@
 from src.pages.AdminPage import AdminPage
+import allure
 
-
+@allure.feature('Admin_page_check')
+@allure.title('Check elements on Admin_page')
 def test_admin_page(browser, url):
     link = url + "admin/"
     browser.get(link)
